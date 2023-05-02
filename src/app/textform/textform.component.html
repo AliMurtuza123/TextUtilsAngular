@@ -1,0 +1,19 @@
+<div [ngStyle]="{'color': mode == 'dark' ? 'white' : '#151B54'}">
+    <h1 >Enter text to analyze</h1>
+    <div class="mb-3">
+        <textarea class='form-control' [(ngModel)]="text" id="myBox" rows="8" placeholder="Enter Text Here" (keydown)="wordCounter()"></textarea>
+    </div> 
+    <button class="btn btn-primary mx-1 my-1" [disabled]="!text" (click)='handleOnClick()'>Convert to Uppercase</button>
+    <button class="btn btn-primary mx-1 my-1" [disabled]="!text" (click)='handleOnLowClick()' >Convert to Lowercase</button>
+    <button class="btn btn-primary mx-1 my-1" [disabled]="text.length === 0" (click)='handleOnCap()' >Capitalize</button>
+    <button class="btn btn-primary mx-1 my-1" [disabled]="text.length === 0" (click)='handleOnClearClick()' >Clear</button>
+    <button class="btn btn-primary mx-1 my-1" [disabled]="text.length === 0" (click)='onCopy()' >Copy</button>
+    <button class="btn btn-primary mx-1 my-1" [disabled]="text.length === 0" (click)='onXSpace()' >Remove Xtra Space</button>
+
+    <hr />
+    <h3>Your Text Summary</h3>
+    <p>{{wordCount}} words and {{charCount}} characters</p>
+    <p>{{readTime}} minutes({{readTime*60}} seconds) read</p>
+    <h3>Preview</h3>
+    <p>{{text ? text : 'Enter something to preview'}}</p>
+    </div>

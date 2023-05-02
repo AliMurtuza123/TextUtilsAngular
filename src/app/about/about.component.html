@@ -1,0 +1,53 @@
+<div class="container" style="padding: 10px">
+    <h1 class="my-3" [ngStyle]="{'color': mode == 'light' ? '#042743' : 'white'}">About Us</h1>
+    <div class="accordion" id="accordionExample" >
+        <div class="accordion-item" >
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button"
+                [ngClass]="mode == 'light' ? 'myLight' : 'myDark'" 
+                type="button" (click)="onClickAcc1()" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Analyze your text
+                </button>
+            </h2>
+            <div id="collapseOne"[ngClass]="accState1 ? 'show' : ''" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body" 
+                [ngClass]="mode == 'light' ? 'myLight' : 'myDark'" 
+                >
+                Textutils gives you a way to analyze your text quickly and efficiently. Be it word count, character count or                        </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed"
+                [ngClass]="mode == 'light' ? 'myLight' : 'myDark'" 
+                type="button" (click)="onClickAcc2()" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Free to use
+                </button>
+            </h2>
+            <div id="collapseTwo" [ngClass]="accState2 ? 'show' : ''" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body"
+                [ngClass]="mode == 'light' ? 'myLight' : 'myDark'" 
+                >
+                TextUtils is a free character counter tool that provides instant character count & word count statistics for a given text. Textutils reports the number of words and characters. Thus it is suitable for writing text with word/ character limit.
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed"
+                [ngClass]="mode == 'light' ? 'myLight' : 'myDark'" 
+                type="button" (click)="onClickAcc3()" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Browser Compatible
+                </button>
+            </h2>
+            <div id="collapseThree" [ngClass]="accState3 ? 'show' : ''" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                <div class="accordion-body"
+                [ngClass]="mode == 'light' ? 'myLight' : 'myDark'" 
+                >
+                This word counter software works in any web browsers such as Chrome, Firefox, Internet Explorer, Safari, Opera. It! suits to count characters in facebook, blog, books, excel document, pdf document, essays, etc.
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
